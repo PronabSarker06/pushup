@@ -418,7 +418,8 @@ export const PushUp = () => {
               width: '100%',
               height: '100%',
               display: 'block',
-              backgroundColor: '#000'
+              backgroundColor: '#000',
+              transform: 'scaleX(-1)'
             }}
           />
           <canvas
@@ -429,7 +430,8 @@ export const PushUp = () => {
               left: 0,
               width: '100%',
               height: '100%',
-              zIndex: 10
+              zIndex: 10,
+              transform: 'scaleX(-1)'
             }}
           />
           

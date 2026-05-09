@@ -30,8 +30,8 @@ const drawSkeleton = (ctx, landmarks, canvasWidth, canvasHeight) => {
     const e = landmarks[end];
     if (s && e && s.visibility > 0.5 && e.visibility > 0.5) {
       ctx.beginPath();
-      ctx.moveTo(s.x * canvasWidth, s.y * canvasHeight);
-      ctx.lineTo(e.x * canvasWidth, e.y * canvasHeight);
+      ctx.moveTo((1 - s.x) * canvasWidth, s.y * canvasHeight);
+      ctx.lineTo((1 - e.x) * canvasWidth, e.y * canvasHeight);
       ctx.stroke();
     }
   }
@@ -42,7 +42,7 @@ const drawLandmarks = (ctx, landmarks, canvasWidth, canvasHeight) => {
     const lm = landmarks[i];
     if (lm.visibility <= 0.5) continue;
 
-    const x = lm.x * canvasWidth;
+    const x = (1 - lm.x) * canvasWidth;
     const y = lm.y * canvasHeight;
     const isKey = !!LANDMARK_NAMES[i];
 
